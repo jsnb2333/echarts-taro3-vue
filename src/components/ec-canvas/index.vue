@@ -2,6 +2,7 @@
   <canvas
     type="2d"
     class="ec-canvas"
+    :id="canvasId"
     :canvas-id="canvasId"
     @touchStart="touchStart"
     @touchMove="touchMove"
@@ -65,7 +66,7 @@ export default {
       const query = Taro.createSelectorQuery();
       const { ec, canvasId } = this;
       query
-        .select(".ec-canvas")
+        .select(`#${canvasId}`)
         .fields({
           node: true,
           size: true

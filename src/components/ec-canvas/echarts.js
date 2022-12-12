@@ -1798,7 +1798,7 @@ function isCanvasEl(el) {
 /**
  * Utilities for mouse or touch events.
  */
-var isDomLevel2 = typeof window !== 'undefined' && !!window.addEventListener;
+var isDomLevel2 = process.env.TARO_ENV === 'h5'
 var MOUSE_EVENT_REG = /^(?:mouse|pointer|contextmenu|drag|drop)|click/;
 var _calcOut = [];
 /**
